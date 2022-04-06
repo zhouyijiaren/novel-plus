@@ -45,7 +45,10 @@ public class AuthorController extends BaseController{
      * 作家发布小说分页列表查询
      * */
     @GetMapping("listBookByPage")
-    public RestResult<PageBean<Book>> listBookByPage(@RequestParam(value = "curr", defaultValue = "1") int page, @RequestParam(value = "limit", defaultValue = "10") int pageSize , HttpServletRequest request){
+    public RestResult<PageBean<Book>> listBookByPage(
+            @RequestParam(value = "curr", defaultValue = "1") int page,
+            @RequestParam(value = "limit", defaultValue = "10") int pageSize ,
+            HttpServletRequest request){
 
         return RestResult.ok(bookService.listBookPageByUserId(getUserDetails(request).getId(),page,pageSize));
     }
