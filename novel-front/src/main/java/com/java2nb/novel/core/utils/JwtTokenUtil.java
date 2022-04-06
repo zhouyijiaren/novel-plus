@@ -39,7 +39,7 @@ public class JwtTokenUtil {
                 .compact();
     }
 
-    /**
+    /**todo zhouxiang ==> 这里为什么能拿到用户的信息呢？
      * 从token中获取JWT中的负载
      */
     private Claims getClaimsFromToken(String token) {
